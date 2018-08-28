@@ -25,6 +25,8 @@ public class ExpressionsPlus extends JavaPlugin {
             if (!Skript.classExists("com.destroystokyo.paper.PaperConfig")) {
                 getLogger().info("Couldn't detect PaperSpigot");
                 getLogger().info("Some expressions might be unavailable");
+            } else {
+                getLogger().info("Activated PaperSpigot dependent contents");
             }
             getLogger().info("Successfully enabled");
         } else {

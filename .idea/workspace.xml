@@ -95,23 +95,36 @@
     <session id="-371652574">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="47" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="457" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="457" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -122,7 +135,7 @@
         <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+              <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -130,8 +143,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/ExpressionsPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="697">
+              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -165,11 +190,12 @@
       <find>get</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprFallingDistance.java" />
-        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprArmorStandPose.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSmall.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMarker.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprArmorStandVisibility.java" />
@@ -204,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtFuck.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSwapHandItems.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/asd.java" />
-        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/EulerAngle.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/EulerAngleArithmetic.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/ClassEulerAngle.java" />
@@ -218,7 +243,10 @@
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullRotation.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullFromTexture.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullTexture.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/effects/EffEntityPathfind.java" />
         <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/ExpressionsPlus.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java" />
       </list>
     </option>
   </component>
@@ -234,7 +262,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -308,7 +336,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,9 +401,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24147122" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24413647" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -387,7 +414,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
@@ -451,117 +478,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/EntityType.class" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprDisplayItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSilenceState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprInvulnerability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="23" column="35" lean-forward="true" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionRadius.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="52" column="54" lean-forward="true" selection-start-line="52" selection-start-column="54" selection-end-line="52" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPlayerCreated.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRepairCost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRiches.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPickupDelay.java" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/minecart/RideableMinecart.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/minecart/SpawnerMinecart.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/minecart/CommandMinecart.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/minecart/ExplosiveMinecart.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/minecart/HopperMinecart.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/Minecart.class" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxFuseTicks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="23" column="20" lean-forward="true" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTNTFuseTicks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSlimeSize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="35" column="28" lean-forward="true" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprWolfAnger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionYield.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" column="41" lean-forward="true" selection-start-line="9" selection-start-column="41" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/asd.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprFallingDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/EulerAngleArithmetic.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/ClassEulerAngle.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/utils/SimpleTypes.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/entity/Villager.class" />
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnedType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -569,95 +485,270 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprProfession.java">
+    <entry file="jar://$PROJECT_DIR$/../Skript-dev37c.jar!/ch/njol/skript/lang/util/SimpleExpression.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/ProfileProperty.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/ItemMeta.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/CraftPlayerProfile.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/SkullMeta.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/BlockFace.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/Skull.class" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullFromTexture.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnRange.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprArmorStandVisibility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="134" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprBreak.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="44" />
+        <state relative-caret-position="255">
+          <caret line="15" column="89" lean-forward="true" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprDisplayItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="88" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionRadius.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="59" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionYield.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="15" column="91" lean-forward="true" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprFallingDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprInvulnerability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="89" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemFrameRotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="61" lean-forward="true" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemPickupAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprLeashHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="119">
+          <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDBits.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMarker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="119">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDFrom.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxFuseTicks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="99">
+          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="76" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../Skript-dev37c.jar!/ch/njol/skript/lang/util/SimpleExpression.class" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxNearbyEntities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="61" lean-forward="true" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprNameVisibility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPersistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPlayerCreated.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPoweredState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="85">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="84" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDRandom.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprProfession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="459">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/ProfileProperty.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/ItemMeta.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/CraftPlayerProfile.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/SkullMeta.class" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemFrameRotation.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRepairCost.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="13" lean-forward="true" selection-end-line="74" />
+        <state relative-caret-position="119">
+          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRequiredPlayerRange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSilenceState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="57" lean-forward="true" selection-start-line="12" selection-start-column="57" selection-end-line="12" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRiches.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSlimeSize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSmall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnerDelay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="36" column="44" lean-forward="true" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="120" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/BlockFace.class" />
-    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/Skull.class" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMarker.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnRange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="20" lean-forward="true" selection-end-line="53" />
+        <state relative-caret-position="119">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="78" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullFromTexture.java" />
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullTexture.java">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTNTFuseTicks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="119">
+          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTrader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDFrom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="91" lean-forward="true" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDBits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDRandom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="93" lean-forward="true" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprWolfAnger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAgelock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -668,17 +759,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml">
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/effects/EffEntityPathfind.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        <state relative-caret-position="136">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <element signature="e#596#626#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullTexture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="21" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/ExpressionsPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="697">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
