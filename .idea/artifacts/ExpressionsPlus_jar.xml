@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/ExpressionsPlus_jar</output-path>
     <root id="archive" name="ExpressionsPlus.jar">
       <element id="module-output" name="ExpressionsPlus" />
-      <element id="file-copy" path="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </root>
   </artifact>
 </component>

@@ -27,7 +27,7 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
     @Override
     @Nullable
     public String convert(ItemStack i) {
-        if (i.getType() != Material.SKULL_ITEM) {
+        if (i.getType() != Material.PLAYER_HEAD) {
             return null;
         }
         SkullMeta meta = ((SkullMeta) i.getItemMeta());
@@ -51,7 +51,7 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
     @Override
     public void change(Event e, Object[] delta, ChangeMode mode) {
         ItemStack i = getExpr().getSingle(e);
-        if (i != null && i.getType() == Material.SKULL_ITEM) {
+        if (i != null && i.getType() == Material.SPAWNER) {
             switch (mode) {
                 case SET:
                     String name = "Head";

@@ -32,7 +32,7 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
     @Override
     @Nullable
     public Number convert(Block block) {
-        if (block.getType() != Material.MOB_SPAWNER)
+        if (block.getType() != Material.SPAWNER)
             return null;
         BlockState state = block.getState();
         CreatureSpawner spawner = (CreatureSpawner) state;
@@ -50,7 +50,7 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Block block = getExpr().getSingle(event);
-            if (block.getType() == Material.MOB_SPAWNER) {
+            if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
                 Integer value = ((Number) delta[0]).intValue();

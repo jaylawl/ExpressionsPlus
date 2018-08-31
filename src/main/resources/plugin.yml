@@ -1,5 +1,5 @@
 main: de.jaylawl.expressionsplus.ExpressionsPlus
 name: ExpressionsPlus
-version: 0.2
+version: @version@
 author: jaylawl
 description: Additional expressions for your Skript library

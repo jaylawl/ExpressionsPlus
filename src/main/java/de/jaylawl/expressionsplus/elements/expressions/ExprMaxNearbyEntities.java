@@ -11,20 +11,20 @@ import org.bukkit.event.Event;
 
 import javax.annotation.Nullable;
 
-public class ExprSpawnCount extends SimplePropertyExpression<Block, Number> {
+public class ExprMaxNearbyEntities extends SimplePropertyExpression<Block, Number> {
 
     static {
-        register(ExprSpawnCount.class, Number.class, "[entity( |-)]spawn count", "block");
+        register(ExprMaxNearbyEntities.class, Number.class, "max[imum] (entities nearby|nearby entities)", "block");
     }
 
     @Override
     @Nullable
     public Number convert(Block block) {
-        if (block.getType() != Material.MOB_SPAWNER)
+        if (block.getType() != Material.SPAWNER)
             return null;
         BlockState state = block.getState();
         CreatureSpawner spawner = (CreatureSpawner) state;
-        return spawner.getSpawnCount();
+        return spawner.getMaxNearbyEntities();
     }
 
     @Override
@@ -38,22 +38,22 @@ public class ExprSpawnCount extends SimplePropertyExpression<Block, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Block block = getExpr().getSingle(event);
-            if (block.getType() == Material.MOB_SPAWNER) {
+            if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
                 Integer value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
-                        spawner.setSpawnCount(spawner.getSpawnCount() + value);
+                        spawner.setMaxNearbyEntities(spawner.getMaxNearbyEntities() + value);
                         break;
                     case REMOVE:
-                        spawner.setSpawnCount(spawner.getSpawnCount() - value);
+                        spawner.setMaxNearbyEntities(spawner.getMaxNearbyEntities() - value);
                         break;
                     case SET:
-                        spawner.setSpawnCount(value);
+                        spawner.setMaxNearbyEntities(value);
                         break;
                     case RESET:
-                        spawner.setSpawnCount(4);
+                        spawner.setMaxNearbyEntities(6);
                         break;
                     default:
                         assert false;
@@ -64,7 +64,7 @@ public class ExprSpawnCount extends SimplePropertyExpression<Block, Number> {
 
     @Override
     protected String getPropertyName() {
-        return "entity spawn count";
+        return "max nearby entities";
     }
 
     @Override

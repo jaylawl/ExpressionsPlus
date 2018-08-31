@@ -11,20 +11,20 @@ import org.bukkit.event.Event;
 
 import javax.annotation.Nullable;
 
-public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
+public class ExprRequiredPlayerRange extends SimplePropertyExpression<Block, Number> {
 
     static {
-        register(ExprSpawnRange.class, Number.class, "[entity( |-)]spawn range", "block");
+        register(ExprRequiredPlayerRange.class, Number.class, "required [player( |-)]range", "block");
     }
 
     @Override
     @Nullable
     public Number convert(Block block) {
-        if (block.getType() != Material.MOB_SPAWNER)
+        if (block.getType() != Material.SPAWNER)
             return null;
         BlockState state = block.getState();
         CreatureSpawner spawner = (CreatureSpawner) state;
-        return spawner.getSpawnRange();
+        return spawner.getRequiredPlayerRange();
     }
 
     @Override
@@ -38,22 +38,22 @@ public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Block block = getExpr().getSingle(event);
-            if (block.getType() == Material.MOB_SPAWNER) {
+            if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
                 Integer value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
-                        spawner.setSpawnRange(spawner.getSpawnRange() + value);
+                        spawner.setRequiredPlayerRange(spawner.getRequiredPlayerRange() + value);
                         break;
                     case REMOVE:
-                        spawner.setSpawnRange(spawner.getSpawnRange() - value);
+                        spawner.setRequiredPlayerRange(spawner.getRequiredPlayerRange() - value);
                         break;
                     case SET:
-                        spawner.setSpawnRange(value);
+                        spawner.setRequiredPlayerRange(value);
                         break;
                     case RESET:
-                        spawner.setSpawnRange(4);
+                        spawner.setRequiredPlayerRange(16);
                         break;
                     default:
                         assert false;
@@ -64,7 +64,7 @@ public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
 
     @Override
     protected String getPropertyName() {
-        return "entity spawn range";
+        return "required player range";
     }
 
     @Override

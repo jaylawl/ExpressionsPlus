@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ExpressionsPlus.iml" filepath="$PROJECT_DIR$/ExpressionsPlus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExpressionsPlus_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ExpressionsPlus_main.iml" group="ExpressionsPlus" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ExpressionsPlus_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ExpressionsPlus_test.iml" group="ExpressionsPlus" />
     </modules>
   </component>
 </project>

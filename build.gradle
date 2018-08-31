@@ -1,0 +1,39 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+apply plugin: 'java'
+
+version '0.2'
+
+repositories {
+    jcenter()
+
+    // repo with PaperSpigot
+    maven {
+        url 'https://repo.destroystokyo.com/repository/maven-public//'
+    }
+
+    // repo with BungeeCord-Chat (a Spigot requirement)
+    maven {
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+
+    // repo with Skript
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    compileOnly('com.github.SkriptLang:Skript:dev37c') {
+        transitive = false
+    }
+    compileOnly 'com.destroystokyo.paper:paper-api:1.13-R0.1-SNAPSHOT'
+}
+
+processResources {
+    filter(ReplaceTokens, tokens: ["version": version]) // replaces the @version@ with the actual version in plugin.yml
+}
+
+jar {
+    archiveName "ExpressionPlus-${version}.jar"
+}
