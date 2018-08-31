@@ -30,7 +30,7 @@ public class ExprRiches extends SimplePropertyExpression<Villager, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Villager entity = getExpr().getSingle(event);
-            Integer value = ((Number) delta[0]).intValue();
+            int value = ((Number) delta[0]).intValue();
             switch (mode) {
                 case ADD:
                     entity.setRiches(entity.getRiches() + value);

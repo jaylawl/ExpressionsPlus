@@ -34,7 +34,7 @@ public class ExprRepairCost extends SimplePropertyExpression<Player, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Player player = getExpr().getSingle(event);
-            Integer v = ((Number) delta[0]).intValue();
+            int v = ((Number) delta[0]).intValue();
             switch (mode) {
                 case SET:
                     player.setWindowProperty(InventoryView.Property.REPAIR_COST, v);

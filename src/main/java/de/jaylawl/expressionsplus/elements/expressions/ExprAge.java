@@ -30,7 +30,7 @@ public class ExprAge extends SimplePropertyExpression<Ageable, Number> {
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Ageable entity = getExpr().getSingle(event);
-            Integer value = ((Number) delta[0]).intValue();
+            int value = ((Number) delta[0]).intValue();
             switch (mode) {
                 case ADD:
                     entity.setAge(entity.getAge() + value);

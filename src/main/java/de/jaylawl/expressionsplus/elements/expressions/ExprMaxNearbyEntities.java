@@ -41,7 +41,7 @@ public class ExprMaxNearbyEntities extends SimplePropertyExpression<Block, Numbe
             if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
-                Integer value = ((Number) delta[0]).intValue();
+                int value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
                         spawner.setMaxNearbyEntities(spawner.getMaxNearbyEntities() + value);

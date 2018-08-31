@@ -41,7 +41,7 @@ public class ExprRequiredPlayerRange extends SimplePropertyExpression<Block, Num
             if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
-                Integer value = ((Number) delta[0]).intValue();
+                int value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
                         spawner.setRequiredPlayerRange(spawner.getRequiredPlayerRange() + value);

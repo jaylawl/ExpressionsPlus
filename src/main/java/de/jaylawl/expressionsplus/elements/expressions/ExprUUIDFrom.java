@@ -30,8 +30,8 @@ public class ExprUUIDFrom extends SimpleExpression<String> {
     @Override
     @Nullable
     protected String[] get(Event event) {
-        Long most = a.getSingle(event).longValue();
-        Long least = b.getSingle(event).longValue();
+        long most = a.getSingle(event).longValue();
+        long least = b.getSingle(event).longValue();
         return new String[] {new UUID(most, least).toString()};
     }
 

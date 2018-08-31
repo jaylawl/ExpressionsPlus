@@ -41,7 +41,7 @@ public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
             if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
-                Integer value = ((Number) delta[0]).intValue();
+                int value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
                         spawner.setSpawnRange(spawner.getSpawnRange() + value);

@@ -30,7 +30,7 @@ public class ExprFallingDistance extends SimplePropertyExpression<Entity, Number
     public void change(Event event, Object[] delta, ChangeMode mode){
         if (delta != null) {
             Entity entity = getExpr().getSingle(event);
-            Float value = ((Number) delta[0]).floatValue();
+            float value = ((Number) delta[0]).floatValue();
             switch (mode) {
                 case ADD:
                     entity.setFallDistance(entity.getFallDistance() + value);
