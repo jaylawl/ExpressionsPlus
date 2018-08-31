@@ -20,7 +20,7 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
 
     static {
         if (Skript.classExists("com.destroystokyo.paper.profile.PlayerProfile")) {
-            register(ExprSkullTexture.class, String.class, "[(skin|player)( |-)]texture( |-)(value|url)", "itemstack");
+            register(ExprSkullTexture.class, String.class, "[(skin|player)( |-)]texture( |-)(value|url)[s]", "itemstacks");
         }
     }
 
@@ -32,6 +32,9 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
         }
         SkullMeta meta = ((SkullMeta) i.getItemMeta());
         PlayerProfile pp = meta.getPlayerProfile();
+        if (pp == null) {
+            return null;
+        }
         Set<ProfileProperty> prop = pp.getProperties();
         for (int x = 0; x < prop.size(); x++) {
             if (prop.iterator().next().getName().contains("textures")) {
@@ -42,36 +45,41 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(String.class);
         return null;
     }
 
     @Override
-    public void change(Event e, Object[] delta, ChangeMode mode) {
-        ItemStack i = getExpr().getSingle(e);
-        if (i != null && i.getType() == Material.SPAWNER) {
-            switch (mode) {
-                case SET:
-                    String name = "Head";
-                    SkullMeta meta = ((SkullMeta) i.getItemMeta());
-                    if (meta.getDisplayName() != null) {
-                        name = meta.getDisplayName();
-                    }
-                    UUID uuid = UUID.randomUUID();
-                    OfflinePlayer p = Bukkit.getOfflinePlayer(uuid);
-                    meta.setOwningPlayer(p);
-                    PlayerProfile pp = meta.getPlayerProfile();
-                    pp.setId(uuid);
-                    pp.setName(uuid.toString());
-                    pp.setProperty(new ProfileProperty("textures", ((String) delta[0])));
-                    meta.setPlayerProfile(pp);
-                    meta.setDisplayName(name);
-                    i.setItemMeta(meta);
-                    break;
-                default:
-                    assert false;
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        for (ItemStack itemStack : getExpr().getArray(e)) {
+            if (itemStack != null && itemStack.getType() == Material.SPAWNER) {
+                switch (mode) {
+                    case SET:
+                        String name = "Head";
+                        SkullMeta meta = ((SkullMeta) itemStack.getItemMeta());
+                        if (meta.getDisplayName() != null) {
+                            name = meta.getDisplayName();
+                        }
+                        UUID uuid = UUID.randomUUID();
+                        OfflinePlayer p = Bukkit.getOfflinePlayer(uuid);
+                        meta.setOwningPlayer(p);
+                        PlayerProfile pp = meta.getPlayerProfile();
+                        if (pp == null) {
+                            pp = Bukkit.createProfile(uuid);
+                        }
+                        pp.setId(uuid);
+                        pp.setName(uuid.toString());
+                        assert delta != null;
+                        pp.setProperty(new ProfileProperty("textures", ((String) delta[0])));
+                        meta.setPlayerProfile(pp);
+                        meta.setDisplayName(name);
+                        itemStack.setItemMeta(meta);
+                        break;
+                    default:
+                        assert false;
+                }
             }
         }
     }
@@ -85,4 +93,5 @@ public class ExprSkullTexture extends SimplePropertyExpression<ItemStack, String
     public Class<? extends String> getReturnType() {
         return String.class;
     }
+
 }

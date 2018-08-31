@@ -8,13 +8,13 @@ import javax.annotation.Nullable;
 public class ExprTrader extends SimplePropertyExpression<Villager, HumanEntity> {
 
     static {
-        register(ExprTrader.class, HumanEntity.class, "[current ](trader|customer)", "entity");
+        register(ExprTrader.class, HumanEntity.class, "[current] (trader|customer)", "entities");
     }
 
     @Override
     @Nullable
     public HumanEntity convert(Villager entity) {
-        if (entity.isTrading() == true) {
+        if (entity.isTrading()) {
             return entity.getTrader();
         }
         return null;
@@ -29,4 +29,5 @@ public class ExprTrader extends SimplePropertyExpression<Villager, HumanEntity> 
     public Class<? extends HumanEntity> getReturnType() {
         return HumanEntity.class;
     }
+
 }

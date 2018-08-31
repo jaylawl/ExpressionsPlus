@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class ExprPlayerCreated extends SimplePropertyExpression<Entity, Boolean> {
 
     static {
-        register(ExprPlayerCreated.class, Boolean.class, "player created (state|value)", "entity");
+        register(ExprPlayerCreated.class, Boolean.class, "player created (state|value)[s]", "entities");
     }
 
     @Override
@@ -25,18 +25,19 @@ public class ExprPlayerCreated extends SimplePropertyExpression<Entity, Boolean>
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.IRON_GOLEM) {
-                Boolean value = ((Boolean) delta[0]);
                 switch (mode) {
                     case SET:
                         ((IronGolem) entity).setPlayerCreated(value);
@@ -57,4 +58,5 @@ public class ExprPlayerCreated extends SimplePropertyExpression<Entity, Boolean>
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

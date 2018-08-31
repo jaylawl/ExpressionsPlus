@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class ExprPoweredState extends SimplePropertyExpression<Entity, Boolean> {
 
     static {
-        register(ExprPoweredState.class, Boolean.class, "power[ed]( |-)(state|value)", "entity");
+        register(ExprPoweredState.class, Boolean.class, "power[ed]( |-)(state|value)[s]", "entities");
     }
 
     @Override
@@ -25,18 +25,19 @@ public class ExprPoweredState extends SimplePropertyExpression<Entity, Boolean> 
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.CREEPER) {
-                Boolean value = ((Boolean) delta[0]);
                 switch (mode) {
                     case SET:
                         ((Creeper) entity).setPowered(value);
@@ -57,4 +58,5 @@ public class ExprPoweredState extends SimplePropertyExpression<Entity, Boolean> 
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

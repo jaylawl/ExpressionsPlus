@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class ExprWolfAnger extends SimplePropertyExpression<Entity, Boolean> {
 
     static {
-        register(ExprWolfAnger.class, Boolean.class, "ang(er|ry) (state|value)", "entity");
+        register(ExprWolfAnger.class, Boolean.class, "ang(er|ry) (state|value)[s]", "entities");
     }
 
     @Override
@@ -25,18 +25,19 @@ public class ExprWolfAnger extends SimplePropertyExpression<Entity, Boolean> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.WOLF) {
-                Boolean value = ((Boolean) delta[0]);
                 switch (mode) {
                     case SET:
                         ((Wolf) entity).setAngry(value);
@@ -57,4 +58,5 @@ public class ExprWolfAnger extends SimplePropertyExpression<Entity, Boolean> {
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

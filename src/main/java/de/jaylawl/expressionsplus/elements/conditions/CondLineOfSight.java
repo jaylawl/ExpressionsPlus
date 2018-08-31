@@ -2,13 +2,11 @@ package de.jaylawl.expressionsplus.elements.conditions;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Event;
-
 import ch.njol.skript.Skript;
 import ch.njol.skript.lang.Condition;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.Kleenean;
-
 import javax.annotation.Nullable;
 
 public class CondLineOfSight extends Condition {

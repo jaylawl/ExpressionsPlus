@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 public class ExprRepairCost extends SimplePropertyExpression<Player, Number> {
 
     static {
-        register(ExprRepairCost.class, Number.class, "[current ][item( |-)](repair|enchant) cost", "player");
+        register(ExprRepairCost.class, Number.class, "[current] [item( |-)](repair|enchant) cost[s]", "players");
     }
 
     @Override
@@ -24,20 +24,21 @@ public class ExprRepairCost extends SimplePropertyExpression<Player, Number> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            Player player = getExpr().getSingle(event);
-            int v = ((Number) delta[0]).intValue();
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        int value = ((Number) delta[0]).intValue();
+
+        for (Player player : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
-                    player.setWindowProperty(InventoryView.Property.REPAIR_COST, v);
+                    player.setWindowProperty(InventoryView.Property.REPAIR_COST, value);
                     break;
                 default:
                     assert false;
@@ -54,4 +55,5 @@ public class ExprRepairCost extends SimplePropertyExpression<Player, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

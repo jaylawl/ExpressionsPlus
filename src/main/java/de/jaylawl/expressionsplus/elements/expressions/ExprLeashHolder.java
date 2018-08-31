@@ -11,30 +11,31 @@ import javax.annotation.Nullable;
 public class ExprLeashHolder extends SimplePropertyExpression<LivingEntity, Entity> {
 
     static {
-        register(ExprLeashHolder.class, Entity.class, "(leash|lead) holder", "entity");
+        register(ExprLeashHolder.class, Entity.class, "(leash|lead) holder[s]", "entities");
     }
 
     @Override
     @Nullable
     public Entity convert(LivingEntity entity) {
-        if (entity.isLeashed() == true) {
+        if (entity.isLeashed()) {
             return entity.getLeashHolder();
         }
         return null;
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Entity.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            LivingEntity entity = getExpr().getSingle(event);
-            Entity value = ((Entity) delta[0]);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        Entity value = ((Entity) delta[0]);
+
+        for (LivingEntity entity : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
                     entity.setLeashHolder(value);
@@ -54,4 +55,5 @@ public class ExprLeashHolder extends SimplePropertyExpression<LivingEntity, Enti
     public Class<? extends Entity> getReturnType() {
         return Entity.class;
     }
+
 }

@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprPersistence extends SimplePropertyExpression<LivingEntity, Boolean> {
 
     static {
-        register(ExprPersistence.class, Boolean.class, "persistence( |-)(state|value|ability)", "entity");
+        register(ExprPersistence.class, Boolean.class, "persistence( |-)(state[s]|value[s]|abilit(y|ies))", "entities");
     }
 
     @Override
@@ -20,17 +20,18 @@ public class ExprPersistence extends SimplePropertyExpression<LivingEntity, Bool
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            LivingEntity entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (LivingEntity entity : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
                     entity.setRemoveWhenFarAway(value);
@@ -50,4 +51,5 @@ public class ExprPersistence extends SimplePropertyExpression<LivingEntity, Bool
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

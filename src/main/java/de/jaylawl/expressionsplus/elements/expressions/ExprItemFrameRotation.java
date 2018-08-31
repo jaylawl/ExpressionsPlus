@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 public class ExprItemFrameRotation extends SimplePropertyExpression<Entity, Number> {
 
     static {
-        register(ExprItemFrameRotation.class, Number.class, "[display( |-)]item rotation", "entity");
+        register(ExprItemFrameRotation.class, Number.class, "[display( |-)]item rotation[s]", "entities");
     }
 
     @Override
@@ -28,29 +28,29 @@ public class ExprItemFrameRotation extends SimplePropertyExpression<Entity, Numb
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode) {
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue();
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.ITEM_FRAME) {
                 ItemFrame frame = ((ItemFrame) entity);
-                Integer v = ((Number) delta[0]).intValue();
-                Integer cur = frame.getRotation().ordinal();
+                int current = frame.getRotation().ordinal();
                 switch (mode) {
                     case ADD:
-                        frame.setRotation(Rotation.values()[((cur + v) % 8)]);
+                        frame.setRotation(Rotation.values()[((current + value) % 8)]);
                         break;
                     case REMOVE:
-                        frame.setRotation(Rotation.values()[((cur + (8 - (v % 8))) % 8)]);
+                        frame.setRotation(Rotation.values()[((current + (8 - (value % 8))) % 8)]);
                         break;
                     case SET:
-                        frame.setRotation(Rotation.values()[Math.max(0, Math.min(7, v))]);
+                        frame.setRotation(Rotation.values()[Math.max(0, Math.min(7, value))]);
                         break;
                     case RESET:
                         frame.setRotation(Rotation.NONE);
@@ -71,4 +71,5 @@ public class ExprItemFrameRotation extends SimplePropertyExpression<Entity, Numb
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

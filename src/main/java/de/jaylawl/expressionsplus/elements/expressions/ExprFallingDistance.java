@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprFallingDistance extends SimplePropertyExpression<Entity, Number> {
 
     static {
-        register(ExprFallingDistance.class, Number.class, "fall[ing] distance", "entity");
+        register(ExprFallingDistance.class, Number.class, "fall[ing] distance[s]", "entities");
     }
 
     @Override
@@ -20,22 +20,24 @@ public class ExprFallingDistance extends SimplePropertyExpression<Entity, Number
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            Entity entity = getExpr().getSingle(event);
-            float value = ((Number) delta[0]).floatValue();
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        float value = delta == null ? -1 : ((Number) delta[0]).floatValue();
+
+        for (Entity entity : getExpr().getArray(e)) {
             switch (mode) {
                 case ADD:
                     entity.setFallDistance(entity.getFallDistance() + value);
+                    break;
                 case REMOVE:
                     entity.setFallDistance(entity.getFallDistance() - value);
+                    break;
                 case SET:
                     entity.setFallDistance(value);
                     break;
@@ -57,4 +59,5 @@ public class ExprFallingDistance extends SimplePropertyExpression<Entity, Number
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

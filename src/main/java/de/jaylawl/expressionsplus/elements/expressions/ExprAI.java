@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprAI extends SimplePropertyExpression<LivingEntity, Boolean> {
 
     static {
-        register(ExprAI.class, Boolean.class, "ai", "entity");
+        register(ExprAI.class, Boolean.class, "ai", "entities");
     }
 
     @Override
@@ -20,23 +20,24 @@ public class ExprAI extends SimplePropertyExpression<LivingEntity, Boolean> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
         if (delta != null) {
-            LivingEntity entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
-            switch (mode) {
-                case SET:
-                    entity.setAI(value);
-                    break;
-                default:
-                    assert false;
+            boolean value = ((Boolean) delta[0]);
+            for (LivingEntity entity : getExpr().getArray(e)) {
+                switch (mode) {
+                    case SET:
+                        entity.setAI(value);
+                        break;
+                    default:
+                        assert false;
+                }
             }
         }
     }
@@ -50,4 +51,5 @@ public class ExprAI extends SimplePropertyExpression<LivingEntity, Boolean> {
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

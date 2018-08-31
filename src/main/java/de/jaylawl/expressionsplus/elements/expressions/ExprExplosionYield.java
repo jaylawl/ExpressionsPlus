@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 public class ExprExplosionYield extends SimplePropertyExpression<Entity, Number> {
 
     static {
-        register(ExprExplosionYield.class, Number.class, "explosion (yield|strength|radius)", "entity");
+        register(ExprExplosionYield.class, Number.class, "explosion (yield[s]|strength[s]|radius|radii)", "entities");
     }
 
     @Override
@@ -26,29 +26,28 @@ public class ExprExplosionYield extends SimplePropertyExpression<Entity, Number>
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue();
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.PRIMED_TNT) {
                 TNTPrimed tnt = ((TNTPrimed) entity);
-                Integer v = ((Number) delta[0]).intValue();
-                Integer cur = tnt.getFuseTicks();
                 switch (mode) {
                     case ADD:
-                        tnt.setFuseTicks(Math.max(0, cur + v));
+                        tnt.setFuseTicks(Math.max(0, tnt.getFuseTicks() + value));
                         break;
                     case REMOVE:
-                        tnt.setFuseTicks(Math.max(0, cur - v));
+                        tnt.setFuseTicks(Math.max(0, tnt.getFuseTicks() - value));
                         break;
                     case SET:
-                        tnt.setFuseTicks(Math.max(0, v));
+                        tnt.setFuseTicks(Math.max(0, value));
                         break;
                     default:
                         assert false;
@@ -66,4 +65,5 @@ public class ExprExplosionYield extends SimplePropertyExpression<Entity, Number>
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprAge extends SimplePropertyExpression<Ageable, Number> {
 
     static {
-        register(ExprAge.class, Number.class, "age", "entity");
+        register(ExprAge.class, Number.class, "age", "entities");
     }
 
     @Override
@@ -20,27 +20,30 @@ public class ExprAge extends SimplePropertyExpression<Ageable, Number> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
         if (delta != null) {
-            Ageable entity = getExpr().getSingle(event);
             int value = ((Number) delta[0]).intValue();
-            switch (mode) {
-                case ADD:
-                    entity.setAge(entity.getAge() + value);
-                case REMOVE:
-                    entity.setAge(entity.getAge() - value);
-                case SET:
-                    entity.setAge(value);
-                    break;
-                default:
-                    assert false;
+            for (Ageable entity : getExpr().getArray(e)) {
+                switch (mode) {
+                    case ADD:
+                        entity.setAge(entity.getAge() + value);
+                        break;
+                    case REMOVE:
+                        entity.setAge(entity.getAge() - value);
+                        break;
+                    case SET:
+                        entity.setAge(value);
+                        break;
+                    default:
+                        assert false;
+                }
             }
         }
     }
@@ -54,4 +57,5 @@ public class ExprAge extends SimplePropertyExpression<Ageable, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

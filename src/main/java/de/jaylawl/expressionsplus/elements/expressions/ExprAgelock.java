@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprAgelock extends SimplePropertyExpression<Ageable, Boolean> {
 
     static {
-        register(ExprAgelock.class, Boolean.class, "age[ ]lock", "entity");
+        register(ExprAgelock.class, Boolean.class, "age[ ]lock[s]", "entities");
     }
 
     @Override
@@ -20,23 +20,24 @@ public class ExprAgelock extends SimplePropertyExpression<Ageable, Boolean> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
         if (delta != null) {
-            Ageable entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
-            switch (mode) {
-                case SET:
-                    entity.setAgeLock(value);
-                    break;
-                default:
-                    assert false;
+            boolean value = ((Boolean) delta[0]);
+            for (Ageable entity : getExpr().getArray(e)) {
+                switch (mode) {
+                    case SET:
+                        entity.setAgeLock(value);
+                        break;
+                    default:
+                        assert false;
+                }
             }
         }
     }
@@ -50,4 +51,5 @@ public class ExprAgelock extends SimplePropertyExpression<Ageable, Boolean> {
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
 
     static {
-        register(ExprSpawnRange.class, Number.class, "[entity( |-)]spawn range", "block");
+        register(ExprSpawnRange.class, Number.class, "[entity( |-)]spawn range", "blocks");
     }
 
     @Override
@@ -28,20 +28,20 @@ public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            Block block = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue();
+
+        for (Block block : getExpr().getArray(e)) {
             if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
-                int value = ((Number) delta[0]).intValue();
                 switch (mode) {
                     case ADD:
                         spawner.setSpawnRange(spawner.getSpawnRange() + value);
@@ -71,4 +71,5 @@ public class ExprSpawnRange extends SimplePropertyExpression<Block, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class ExprSlimeSize extends SimplePropertyExpression<Entity, Number> {
 
     static {
-        register(ExprSlimeSize.class, Number.class, "[slime( |-)]size", "entity");
+        register(ExprSlimeSize.class, Number.class, "[slime( |-)]size[s]", "entities");
     }
 
     @Override
@@ -25,29 +25,29 @@ public class ExprSlimeSize extends SimplePropertyExpression<Entity, Number> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        int value = ((Number) delta[0]).intValue();
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.SLIME) {
                 Slime slime = ((Slime) entity);
-                Integer v = ((Number) delta[0]).intValue();
-                Integer cur = slime.getSize();
                 switch (mode) {
                     case ADD:
-                        slime.setSize(Math.max(0, cur + v));
+                        slime.setSize(Math.max(0, slime.getSize() + value));
                         break;
                     case REMOVE:
-                        slime.setSize(Math.max(0, cur - v));
+                        slime.setSize(Math.max(0, slime.getSize() - value));
                         break;
                     case SET:
-                        slime.setSize(Math.max(0, v));
+                        slime.setSize(Math.max(0, value));
                         break;
                     default:
                         assert false;
@@ -65,4 +65,5 @@ public class ExprSlimeSize extends SimplePropertyExpression<Entity, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

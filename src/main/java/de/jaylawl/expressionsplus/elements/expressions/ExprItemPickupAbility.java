@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprItemPickupAbility extends SimplePropertyExpression<LivingEntity, Boolean> {
 
     static {
-        register(ExprItemPickupAbility.class, Boolean.class, "item[stack] pickup[( |-)state|ability]", "entity");
+        register(ExprItemPickupAbility.class, Boolean.class, "item[stack] pickup[( |-)(state[s]|abilit(y|ies))]", "entities");
     }
 
     @Override
@@ -20,17 +20,18 @@ public class ExprItemPickupAbility extends SimplePropertyExpression<LivingEntity
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            LivingEntity entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (LivingEntity entity : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
                     entity.setCanPickupItems(value);
@@ -50,4 +51,5 @@ public class ExprItemPickupAbility extends SimplePropertyExpression<LivingEntity
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

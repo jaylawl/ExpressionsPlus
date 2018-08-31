@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 public class ExprExplosionRadius extends SimplePropertyExpression<Entity, Number> {
 
     static {
-        register(ExprExplosionRadius.class, Number.class, "explosion (radius|size)", "entity");
+        register(ExprExplosionRadius.class, Number.class, "explosion (radius|radii|size[s])", "entities");
     }
 
     @Override
@@ -25,29 +25,28 @@ public class ExprExplosionRadius extends SimplePropertyExpression<Entity, Number
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue(); // null for RESET
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.CREEPER) {
                 Creeper creeper = ((Creeper) entity);
-                Integer v = ((Number) delta[0]).intValue();
-                Integer cur = creeper.getExplosionRadius();
                 switch (mode) {
                     case ADD:
-                        creeper.setExplosionRadius(Math.max(0, cur + v));
+                        creeper.setExplosionRadius(Math.max(0, creeper.getExplosionRadius() + value));
                         break;
                     case REMOVE:
-                        creeper.setExplosionRadius(Math.max(0, cur - v));
+                        creeper.setExplosionRadius(Math.max(0, creeper.getExplosionRadius() - value));
                         break;
                     case SET:
-                        creeper.setExplosionRadius(Math.max(0, v));
+                        creeper.setExplosionRadius(Math.max(0, value));
                         break;
                     case RESET:
                         creeper.setExplosionRadius(3);
@@ -68,4 +67,5 @@ public class ExprExplosionRadius extends SimplePropertyExpression<Entity, Number
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

@@ -32,22 +32,21 @@ public class ExprMaxFuseTicks extends SimplePropertyExpression<Entity, Number> {
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue();
+
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.CREEPER) {
                 Creeper creeper = ((Creeper) entity);
-                Integer v = ((Number) delta[0]).intValue();
-                Integer cur = creeper.getMaxFuseTicks();
                 switch (mode) {
                     case ADD:
-                        creeper.setMaxFuseTicks(Math.max(0, cur + v));
+                        creeper.setMaxFuseTicks(Math.max(0, creeper.getMaxFuseTicks() + value));
                         break;
                     case REMOVE:
-                        creeper.setMaxFuseTicks(Math.max(0, cur - v));
+                        creeper.setMaxFuseTicks(Math.max(0, creeper.getMaxFuseTicks() - value));
                         break;
                     case SET:
-                        creeper.setMaxFuseTicks(Math.max(0, v));
+                        creeper.setMaxFuseTicks(Math.max(0, value));
                         break;
                     case RESET:
                         creeper.setMaxFuseTicks(30);
@@ -68,4 +67,5 @@ public class ExprMaxFuseTicks extends SimplePropertyExpression<Entity, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

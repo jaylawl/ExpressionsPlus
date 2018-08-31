@@ -3,7 +3,7 @@ package de.jaylawl.expressionsplus.elements.expressions;
 import ch.njol.skript.classes.Changer.ChangeMode;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.skript.lang.Expression;
-import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
 import org.bukkit.Material;
@@ -17,13 +17,13 @@ import javax.annotation.Nullable;
 public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
 
     static {
-        register(ExprSpawnerDelay.class, Number.class, "(0¦current|1¦min[imum]|2¦max[imum]) [spawn( |-)](delay|cooldown)", "block");
+        register(ExprSpawnerDelay.class, Number.class, "(0¦current|1¦min[imum]|2¦max[imum]) [spawn( |-)](delay|cooldown)[s]", "blocks");
     }
 
     private int mark;
 
     @Override
-    public boolean init(final Expression<?>[] exprs, final int matchedPattern, final Kleenean isDelayed, final SkriptParser.ParseResult parseResult) {
+    public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
         super.init(exprs, matchedPattern, isDelayed, parseResult);
         mark = parseResult.mark;
         return true;
@@ -40,27 +40,27 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.ADD || mode == ChangeMode.REMOVE || mode == ChangeMode.SET || mode == ChangeMode.RESET)
             return CollectionUtils.array(Number.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            Block block = getExpr().getSingle(event);
-            if (block.getType() == Material.SPAWNER) {
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode){
+        int value = delta == null ? -1 : ((Number) delta[0]).intValue();
+
+        for (Block block : getExpr().getArray(e)) {
+                if (block.getType() == Material.SPAWNER) {
                 BlockState state = block.getState();
                 CreatureSpawner spawner = (CreatureSpawner) state;
-                Integer value = ((Number) delta[0]).intValue();
-                Integer cur = spawner.getDelay();
-                Integer min = spawner.getMinSpawnDelay();
-                Integer max = spawner.getMaxSpawnDelay();
+                int current = spawner.getDelay();
+                int min = spawner.getMinSpawnDelay();
+                int max = spawner.getMaxSpawnDelay();
                 switch (mode) {
                     case ADD:
                         if (mark == 0) {
-                            spawner.setDelay(cur + value);
+                            spawner.setDelay(current + value);
                         }
                         else if (mark == 1) {
                             if (min + value > max)
@@ -76,7 +76,7 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
                         break;
                     case REMOVE:
                         if (mark == 0) {
-                            spawner.setDelay(cur - value);
+                            spawner.setDelay(current - value);
                         }
                         else if (mark == 1) {
                             spawner.setMinSpawnDelay(min - value);
@@ -119,6 +119,7 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
                     default:
                         assert false;
                 }
+                spawner.update();
             }
         }
     }
@@ -132,4 +133,5 @@ public class ExprSpawnerDelay extends SimplePropertyExpression<Block, Number> {
     public Class<? extends Number> getReturnType() {
         return Number.class;
     }
+
 }

@@ -5,7 +5,7 @@ import org.bukkit.event.Event;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.expressions.base.SimplePropertyExpression;
 import ch.njol.skript.classes.Changer.ChangeMode;
-import ch.njol.skript.lang.SkriptParser;
+import ch.njol.skript.lang.SkriptParser.ParseResult;
 import ch.njol.util.coll.CollectionUtils;
 import ch.njol.util.Kleenean;
 import javax.annotation.Nullable;
@@ -13,13 +13,13 @@ import javax.annotation.Nullable;
 public class ExprArmorStandVisibility extends SimplePropertyExpression<ArmorStand, Boolean> {
 
     static {
-        register(ExprArmorStandVisibility.class, Boolean.class, "(0¦visibility|1¦arm( |-)visibility|2¦[base( |-)]plate( |-)visibility)", "entity");
+        register(ExprArmorStandVisibility.class, Boolean.class, "(0¦visibility|1¦arm( |-)visibility|2¦[base( |-)]plate( |-)visibility)", "entities");
     }
 
     private int mark;
 
     @Override
-    public boolean init(final Expression<?>[] exprs, final int matchedPattern, final Kleenean isDelayed, final SkriptParser.ParseResult parseResult) {
+    public boolean init(Expression<?>[] exprs, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
         super.init(exprs, matchedPattern, isDelayed, parseResult);
         mark = parseResult.mark;
         return true;
@@ -32,26 +32,24 @@ public class ExprArmorStandVisibility extends SimplePropertyExpression<ArmorStan
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            ArmorStand entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
+    public void change(Event event, @Nullable Object[] delta, ChangeMode mode) {
+        for (ArmorStand entity : getExpr().getArray(event)) {
             switch (mode) {
                 case SET:
+                    assert delta != null;
+                    boolean value = ((Boolean) delta[0]);
                     if (mark == 0) {
                         entity.setVisible(value);
-                    }
-                    else if (mark == 1) {
+                    } else if (mark == 1) {
                         entity.setArms(value);
-                    }
-                    else {
+                    } else {
                         entity.setBasePlate(value);
                     }
                     break;
@@ -63,11 +61,22 @@ public class ExprArmorStandVisibility extends SimplePropertyExpression<ArmorStan
 
     @Override
     protected String getPropertyName() {
-        return "full/arm/baseplate visibility";
+        switch (mark) {
+            case 0:
+                return "full visibility";
+            case 1:
+                return "arm visibility";
+            case 2:
+                return "visibility";
+            default:
+                assert false;
+                return "visibility";
+        }
     }
 
     @Override
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

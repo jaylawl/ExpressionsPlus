@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 public class ExprProfession extends SimplePropertyExpression<Villager, Profession> {
 
     static {
-        register(ExprProfession.class, Profession.class, "profession", "entity");
+        register(ExprProfession.class, Profession.class, "profession[s]", "entities");
     }
 
     @Override
@@ -21,17 +21,18 @@ public class ExprProfession extends SimplePropertyExpression<Villager, Professio
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Profession.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            Villager entity = getExpr().getSingle(event);
-            Profession value = ((Profession) delta[0]);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        Profession value = ((Profession) delta[0]);
+
+        for (Villager entity : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
                     entity.setProfession(value);
@@ -51,4 +52,5 @@ public class ExprProfession extends SimplePropertyExpression<Villager, Professio
     public Class<? extends Profession> getReturnType() {
         return Profession.class;
     }
+
 }

@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public class ExprSmall extends SimplePropertyExpression<ArmorStand, Boolean> {
 
     static {
-        register(ExprSmall.class, Boolean.class, "small[ness]( |-)(state|value)", "entity");
+        register(ExprSmall.class, Boolean.class, "small[ness]( |-)(state|value)[s]", "entities");
     }
 
     @Override
@@ -20,17 +20,18 @@ public class ExprSmall extends SimplePropertyExpression<ArmorStand, Boolean> {
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(Boolean.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode){
-        if (delta != null) {
-            ArmorStand entity = getExpr().getSingle(event);
-            Boolean value = ((Boolean) delta[0]);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        assert delta != null;
+        boolean value = ((Boolean) delta[0]);
+
+        for (ArmorStand entity : getExpr().getArray(e)) {
             switch (mode) {
                 case SET:
                     entity.setSmall(value);
@@ -50,4 +51,5 @@ public class ExprSmall extends SimplePropertyExpression<ArmorStand, Boolean> {
     public Class<? extends Boolean> getReturnType() {
         return Boolean.class;
     }
+
 }

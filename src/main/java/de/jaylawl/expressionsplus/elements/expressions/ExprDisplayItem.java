@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 public class ExprDisplayItem extends SimplePropertyExpression<Entity, ItemStack> {
 
     static {
-        register(ExprDisplayItem.class, ItemStack.class, "(display[ed]|show[n])( |-)item", "entity");
+        register(ExprDisplayItem.class, ItemStack.class, "(display[ed]|show[n])( |-)item[s]", "entities");
     }
 
     @Override
@@ -27,20 +27,20 @@ public class ExprDisplayItem extends SimplePropertyExpression<Entity, ItemStack>
     }
 
     @Override
-    public Class<?>[] acceptChange(final ChangeMode mode) {
+    public Class<?>[] acceptChange(ChangeMode mode) {
         if (mode == ChangeMode.SET)
             return CollectionUtils.array(ItemStack.class);
         return null;
     }
 
     @Override
-    public void change(Event event, Object[] delta, ChangeMode mode) {
-        if ((delta != null) && (getExpr().getSingle(event) != null)) {
-            Entity entity = getExpr().getSingle(event);
+    public void change(Event e, @Nullable Object[] delta, ChangeMode mode) {
+        for (Entity entity : getExpr().getArray(e)) {
             if (entity.getType() == EntityType.ITEM_FRAME) {
-                ItemStack value = ((ItemStack) delta[0]);
                 switch (mode) {
                     case SET:
+                        assert delta != null;
+                        ItemStack value = ((ItemStack) delta[0]);
                         ((ItemFrame) entity).setItem(value);
                         break;
                     default:
@@ -52,11 +52,12 @@ public class ExprDisplayItem extends SimplePropertyExpression<Entity, ItemStack>
 
     @Override
     protected String getPropertyName() {
-        return "display item";
+        return "displayed item";
     }
 
     @Override
     public Class<? extends ItemStack> getReturnType() {
         return ItemStack.class;
     }
+
 }
