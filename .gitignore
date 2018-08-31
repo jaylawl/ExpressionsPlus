@@ -15,3 +15,4 @@ out/
 
 # IntelliJ: various project-specific and user-specific configs, Gradle is capable of regenerating most of these
 .idea/
+*.iml

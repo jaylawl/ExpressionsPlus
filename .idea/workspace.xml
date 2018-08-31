@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ExpressionsPlus:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9c42d6f6-5c17-4333-8478-46eb8c06ebd2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ExpressionsPlus" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ExpressionsPlus" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ExpressionsPlus" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="524306714">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="19" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="6" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="19" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="6" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="3381" />
+          <entry key="yml" value="160" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="3381" />
+          <entry key="YAML" value="160" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-586465605">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.119" value="1" />
+          <entry key="project.open.time.154" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="15048" />
+          <entry key="yml" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="15048" />
+          <entry key="YAML" value="32" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="64" />
+          <entry key="java" value="129" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="64" />
+          <entry key="JAVA" value="129" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-371652574">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.63" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="752" />
+          <entry key="yml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="752" />
+          <entry key="YAML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="217572339">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>description</find>
+      <find>this</find>
+      <find>toString</find>
+      <find>getVersion</find>
+      <find>String</find>
+      <find>event</find>
+      <find>remove</find>
+      <find>Boolean</find>
+      <find>boolean</find>
+      <find>entity</find>
+      <find>ItemFrame</find>
+      <find>SkriptEventHandler</find>
+      <find>get</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="patch-1" />
+      </map>
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4607228578810" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3031065068" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1098587544" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSmall.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMarker.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprArmorStandVisibility.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAgelock.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAge.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTrader.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRiches.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprProfession.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/utils/UtilProfession.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/NBTOf.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprNBTOf.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprDelay.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRequiredPlayerRange.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnCount.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnRange.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxNearbyEntities.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnerDelay.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprDisplayItem.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ItemFrameRotation.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnedType.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemFrameRotation.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPowered.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxFuseTicks.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionRadius.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPlayerCreated.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRepairCost.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPickupDelay.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSlimeSize.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTNTFuseTicks.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionYield.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprWolfAnger.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtFuck.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSwapHandItems.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/asd.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/EulerAngle.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/EulerAngleArithmetic.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/classes/ClassEulerAngle.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/utils/SimpleTypes.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/conditions/CondLineOfSight.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDFrom.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprNewUUID.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDBits.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprBreak.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullWithTexture.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullRotation.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullFromTexture.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullTexture.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/effects/EffEntityPathfind.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/ExpressionsPlus.java" />
+        <option value="$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="32" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ExpressionsPlus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExpressionsPlus" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jNBT" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.27931035" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.ExpressionsPlus [jar]">
+    <configuration name="HelloFucks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jaylawl.hellofucks.HelloFucks" />
+      <module name="ExpressionsPlus" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jaylawl.hellofucks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpressionsPlus [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/HelloFucks_jar/HelloFucks.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ExpressionsPlus:jar" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.HelloFucks" />
+      <item itemvalue="Gradle.ExpressionsPlus [jar]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ExpressionsPlus [jar]" />
+        <item itemvalue="Application.HelloFucks" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c42d6f6-5c17-4333-8478-46eb8c06ebd2" name="Default Changelist" comment="" />
+      <created>1534708314721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534708314721</updated>
+      <workItem from="1535748168520" duration="15000" />
+      <workItem from="1535748185183" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="79000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2515625" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Learn" order="7" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.32944915" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Remote Host" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Gradle" order="8" />
+      <window_info anchor="right" id="Database" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../SkStuff (unoff TukeNuke 1.12 fork).jar!/me/TheBukor/SkStuff/SkStuff.class</url>
+          <line>1</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../Skript-dev37c.jar!/ch/njol/skript/effects/EffSpawn.class</url>
+          <line>1</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../Skript-dev37c.jar!/ch/njol/skript/lang/util/SimpleExpression.class</url>
+          <line>1</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/../Skript-dev37c.jar!/ch/njol/skript/lang/util/SimpleExpression.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/ProfileProperty.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/ItemMeta.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/com/destroystokyo/paper/profile/CraftPlayerProfile.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/inventory/meta/SkullMeta.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/BlockFace.class" />
+    <entry file="jar://$PROJECT_DIR$/../spigot 1.12.jar!/org/bukkit/block/Skull.class" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullFromTexture.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAge.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAI.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprArmorStandVisibility.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprBreak.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprDisplayItem.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionRadius.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprExplosionYield.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprFallingDistance.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprInvulnerability.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemFrameRotation.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprItemPickupAbility.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprLeashHolder.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMarker.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxFuseTicks.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprMaxNearbyEntities.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprNameVisibility.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPersistence.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPlayerCreated.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprPoweredState.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprProfession.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRepairCost.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRequiredPlayerRange.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSilenceState.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprRiches.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSlimeSize.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSmall.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnCount.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnerDelay.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSpawnRange.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTNTFuseTicks.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprTrader.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDFrom.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDRandom.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprWolfAnger.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprAgelock.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/conditions/CondLineOfSight.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/effects/EffEntityPathfind.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprSkullTexture.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/plugin.yml" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/ExpressionsPlus.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/expressions/ExprUUIDBits.java" />
+    <entry file="file://$PROJECT_DIR$/src/de/jaylawl/expressionsplus/elements/events/EvtSimple.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.destroystokyo.paper/paper-api/1.13-R0.1-SNAPSHOT/e5c9d99b791696562c3522fc932c56ceb1c7fec2/paper-api-1.13-R0.1-SNAPSHOT-sources.jar!/org/bukkit/inventory/meta/SkullMeta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ExpressionsPlus:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ExpressionsPlus</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>spigot 1.12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27931035" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
