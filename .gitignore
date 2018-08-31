@@ -10,9 +10,9 @@
 # ===== INTELLIJ and other JetBrains products =====
 
 # IntelliJ: compiled stuff lands here
-build/
-out/
+build/*
+out/*
 
 # IntelliJ: various project-specific and user-specific configs, Gradle is capable of regenerating most of these
-.idea/
+.idea/*
 *.iml
