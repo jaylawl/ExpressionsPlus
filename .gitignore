@@ -1,0 +1,17 @@
+# ===== GRADLE =====
+
+# Gradle: compiled stuff lands here
+/target
+
+# Gradle: auto-generated
+/.gradle/
+
+
+# ===== INTELLIJ and other JetBrains products =====
+
+# IntelliJ: compiled stuff lands here
+build/
+out/
+
+# IntelliJ: various project-specific and user-specific configs, Gradle is capable of regenerating most of these
+.idea/
